@@ -14,54 +14,20 @@ function Header() {
     const { userInfo } = userSignin;
 
     return (
-    <>
-        <Menu pointing secondary>
-                
-                <Menu.Item >
-                    <Image
-                        size="tiny"
-                        src="/images/logo.jpg"
-                        alt='logo'
-                        as={Link}
-                        to='/'
-                        rounded
-                    />
-                
-                </Menu.Item>
-                {userInfo ? (
-                    
-                <Menu.Menu position='right'>
-                    <Menu.Item
-                        name='sign Out'
-                        active={activeItem === 'sign Out'}
-                        onClick={handleItemClick}
-                        as={Link}
-                        to="#signOut"
-                    />
-            
-                </Menu.Menu>
-                     ) : (
-                    <Menu.Menu position='right'>
-                        <Menu.Item
-                            name='sign In'
-                            active={activeItem === 'sign In'}
-                            onClick={handleItemClick}
-                            as={Link}
-                            to="/signin"
-                        />
+      <>
+        <header className="row">
+                <div >
+                    <Link to='/'>
+                        <img className="small" src='./images/logo.jpg' /> 
                         
-                        <Menu.Item
-                            name='register'
-                            active={activeItem === 'register'}
-                            onClick={handleItemClick}
-                            as={Link}
-                            to="/register"
-                        />
-                    </Menu.Menu> 
-                )};
-                
-            </Menu>
-        </> 
+                    </Link>
+          </div>
+          <div>
+            <a href="/cart">Cart</a>
+            <a href="/signin">Sign In</a>
+          </div>
+        </header>
+      </>
     );
 }
 

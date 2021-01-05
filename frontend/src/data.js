@@ -4,49 +4,51 @@ const data = {
             _id:'1',
             name:'Wild burger',
             category:'pastries',
-            image: '/images/product-1.jpg',
+            image: '/images/p1.jpg',
             price: 10,
-            description: 'high qulity product'
+            countInStock:3,
+            description: 'high quality product'
         },
-        {
-            _id:'2',
-            name:'Wild burger',
-            category:'pastries',
-            image: '/images/product-1.jpg',
-            price: 1,
-            description: 'high qulity product'
-        },
+       
         {
             _id:'3',
-            name:'Wild burger',
-            category:'pastries',
-            image: '/images/product-1.jpg',
+            name:'Fried Rice',
+            category:'Rice',
+            image: '/images/p2.jpg',
+            
+            countInStock:1,
             price: 5,
-            description: 'high qulity product'
+            description: 'high quality product'
         },
         {
             _id:'4',
-            name:'Wild burger',
-            category:'pastries',
-            image: '/images/product-1.jpg',
+            name:'Buttery smooth Ice-cream',
+            category:'ice-cream',
+            image: '/images/p3.jpg',
             price: 25,
-            description: 'high qulity product'
+            
+            countInStock:6,
+            description: 'high quality product'
         },
         {
             _id:'5',
-            name:'Wild burger',
+            name:'Oven fresh Meat-Pie',
             category:'pastries',
-            image: '/images/product-1.jpg',
+            image: '/images/p4.jpg',
             price: 15,
-            description: 'high qulity product'
+            
+            countInStock:8,
+            description: 'high quality product'
         },
         {
             _id:'6',
-            name:'Wild burger',
-            category:'pastries',
-            image: '/images/product-1.jpg',
+            name:'Bottle Water',
+            category:'drinks',
+            image: '/images/p5.jpg',
             price: 2,
-            description: 'high qulity product'
+            
+            countInStock:0,
+            description: 'high quality product'
         },
     ]
 }
