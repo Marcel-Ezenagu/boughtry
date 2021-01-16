@@ -10,15 +10,16 @@ function Header() {
     const [activeItem, setActiveItem] = useState('');
     const handleItemClick = (e, { name }) => setActiveItem(name);
 
-    const userSignin = useSelector(state => state.userSignin);
-    const { userInfo } = userSignin;
+   // const userSignin = useSelector(state => state.userSignin);
+   // const { userInfo } = userSignin;
 
     return (
       <>
         <header className="row">
                 <div >
-                    <Link to='/'>
-                        <img className="small" src='./images/logo.jpg' /> 
+            <Link to='/'>
+              
+                        <img className="small" alt='LOGO' /> 
                         
                     </Link>
           </div>

@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { Link } from 'react-router-dom'
-import { signIn } from '../actions/userActions';
+//import { signIn } from '../actions/userActions';
 
 export default function SignIn (props) {
 
