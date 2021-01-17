@@ -86,12 +86,12 @@ button {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smooting: grayscale;
     font-family: Helvetica, Arial,  sans-serif;    
+
 }
 
 button{
     background-color: lightgray;
     cursor: pointer;
-
 }
 
 input:hover,
@@ -234,7 +234,7 @@ img.large{
     background-color: #e0e0ff;
 
 }
-s
+
 .alert-danger{
     color: #a02020;
     background-color: #ffe0e0e0;

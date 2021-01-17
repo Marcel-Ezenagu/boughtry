@@ -10,6 +10,10 @@ function Header() {
     const [activeItem, setActiveItem] = useState('');
     const handleItemClick = (e, { name }) => setActiveItem(name);
 
+  const cart = useSelector(state => state.cart);
+  const { cartItems } = cart;
+
+  
    // const userSignin = useSelector(state => state.userSignin);
    // const { userInfo } = userSignin;
 
@@ -18,14 +22,17 @@ function Header() {
         <header className="row">
                 <div >
             <Link to='/'>
-              
-                        <img className="small" alt='LOGO' /> 
-                        
+                <h2>LOGO</h2>
+                        {/* <img className="small" alt='LOGO' /> 
+                         */}
                     </Link>
           </div>
           <div>
-            <a href="/cart">Cart</a>
-            <a href="/signin">Sign In</a>
+            <Link to="/cart">Cart
+            {cartItems.length > 0 && (
+                <span className='badge' >{cartItems.length} </span>)} 
+            </Link>
+            <Link to="/signin">Sign In</Link>
           </div>
         </header>
       </>

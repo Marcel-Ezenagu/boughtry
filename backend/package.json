@@ -1,25 +1,29 @@
 {
-    "name": "backend",
-    "type": "module",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "bcrypt": "^5.0.0",
-      "bcryptjs": "^2.4.3",
-      "body-parser": "^1.19.0",
-      "cors": "^2.8.5",
-      "dotenv": "^8.2.0",
-      "express": "^4.17.1",
-      "express-async-handler": "^1.1.4",
-      "jsonwebtoken": "^8.5.1",
-      "mongoose": "^5.11.7"
-    }
+  "name": "backend",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch backend --exec node --experimental-modules server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marcel-Ezenagu/chilis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marcel-Ezenagu/chilis/issues"
+  },
+  "homepage ": "https://github.com/Marcel-Ezenagu/chilis#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12"
   }
-  
+}
