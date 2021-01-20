@@ -3,7 +3,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from 'dotenv';
 
-import data from './product.js';
+import userRouter from "./routers/userRouter.js";
+import productRouter from "./routers/productRouter.js";
 
 
 dotenv.config();
@@ -16,6 +17,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 
+//api routes setup
+/* 
 app.get('/api/products/:id', (req, res) => {
     const product = data.products.find(x => x._id === req.params.id);
     if (product) {
@@ -24,25 +27,24 @@ app.get('/api/products/:id', (req, res) => {
         res.status(404).send({ message: 'Product not Found' });
     }
 });
- 
+ */ 
 
-app.get('/api/products', (req, res) => {
-    res.send(data.products);
-});
 
+app.use('/api/users', userRouter);
+
+app.use('/api/products', productRouter);
 
 app.get('/', (req, res) => {
     res.send('Server is ready');
 });
 
-
-// set up routes
+app.use((err, req, res, next) => {
+    res.status(500).send({ message: err.message })
+});
 
 //db setup
-
-
-const URI = `mongodb://marcel:${process.env.DB_PASSWORD}@boughtry-shard-00-00.lhw4l.mongodb.net:27017,boughtry-shard-00-01.lhw4l.mongodb.net:27017,boughtry-shard-00-02.lhw4l.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-9cmu44-shard-0&authSource=admin&retryWrites=true&w=majority`
-
+   
+const URI = `mongodb://marcel:${process.env.DB_PASSWORD}@cluster0-shard-00-00.fkta9.mongodb.net:27017,cluster0-shard-00-01.fkta9.mongodb.net:27017,cluster0-shard-00-02.fkta9.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-v9mvia-shard-0&authSource=admin&retryWrites=true&w=majority`
 mongoose.connect(URI, {
 
     useCreateIndex: true,
