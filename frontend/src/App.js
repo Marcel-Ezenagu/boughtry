@@ -9,6 +9,7 @@ import ProductScreen from './pages/ProductScreen';
 import CartScreen from './pages/CartScreen';
 import SigninScreen from './pages/SigninScreen';
 import ShippingAddress from './pages/ShippingAddress';
+import NewProduct from './pages/NewProduct';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           
         <Route path='/shipping' component={ShippingAddress} />
           <Route path='/cart/:id?' component={CartScreen} />
+          <Route path='/create' component={NewProduct} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/signin' component={SigninScreen} />
           <Route path= '/register' component={Register} />

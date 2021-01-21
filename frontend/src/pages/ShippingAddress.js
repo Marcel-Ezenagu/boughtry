@@ -4,8 +4,8 @@ import CheckoutSteps from '../Components/CheckoutSteps'
 export default function ShippingAddress() {
     const [fullName, setFullName] = useState('');
     
-    const [service, setService] = useState('');
-    const [outlet, setOutlet] = useState('');
+    const [service, setService] = useState('Choose a method of service');
+    const [outlet, setOutlet] = useState('Pick an outlet');
     const [address, setAddress] = useState('');
     const [phone, setPhone] = useState('');
 
@@ -35,14 +35,13 @@ export default function ShippingAddress() {
                     <label htmlFor='service'>Service method</label>
                     <select  type='text'
                         id='service'
-                        placeholder='Choose a service mode'
                         value={service}
                         onChange={e => setService(e.target.value)}
                         required>
-                        <option disabled active>Choose a method of service</option>
-                        <option >Mode A</option>
-                        <option >Mode B</option>
-                        <option >Mode C</option>
+                        <option selected disabled>Choose a method of service</option>
+                        <option value='mode A'>Mode A</option>
+                        <option value='mode B' >Mode B</option>
+                        <option value='mode C'>Mode C</option>
                  
                     
                     </select>
@@ -54,16 +53,19 @@ export default function ShippingAddress() {
                     <select 
                         type='text'
                         id='outlet'
-                        placeholder='Select an outlet'
                         value={outlet}
                         onChange={e => setOutlet(e.target.value)}
                         required>
-                        <option disabled selected hidden>Choose a method of service</option>
-                        <option >Shop A</option>
-                        <option >Shop B</option>
-                        <option >Shop C</option>
+                        <option selected  disabled>Pick an outlet</option>
+                        
+                        <option 
+                        value='Shop A'>Shop A</option>
+                        <option 
+                        value='Shop B'>Shop B</option>
+                        <option 
+                        value='Shop C'>Shop C</option>
                  
-                    
+                
                     </select>
                  
                 </div>

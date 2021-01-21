@@ -28,4 +28,27 @@ productRouter.get('/:id', expressAsyncHandler(async (req, res) => {
     }
 }))
 
+
+productRouter.post('/', expressAsyncHandler(async (req, res) => {
+    const product = new Product({
+        name: req.body.name, image: req.body.image,
+        description: req.body.description, price: req.body.price,
+        countInStock: req.body.price, category: req.body.category,
+        brand: req.body.category
+        
+    });
+    const createdProduct = await product.save()
+    res.send({
+        _id: createdProduct._id,
+        
+        name:createdProduct.name,
+        image:
+        createdProduct.image,
+        description: createdProduct.description,
+        price: createdProduct.price,
+        countInStock: createdProduct.countInStock,
+        category: createdProduct.category,
+        brand:createdProduct.brand,
+    })
+}))
 export default productRouter;
