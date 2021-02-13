@@ -12,9 +12,17 @@ import ShippingAddress from './pages/ShippingAddress';
 import NewProduct from './pages/NewProduct';
 
 
+import { useDispatch} from 'react-redux';
+import { listProducts } from './actions/productActions';
 
 function App() {
   
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+      dispatch(listProducts());
+  }, []);
 
   return (
     <Router>
@@ -25,7 +33,7 @@ function App() {
           
         <Route path='/shipping' component={ShippingAddress} />
           <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/create' component={NewProduct} />
+          <Route path='/createProduct' component={NewProduct} />
           <Route path='/product/:id' component={ProductScreen} />
           <Route path='/signin' component={SigninScreen} />
           <Route path= '/register' component={Register} />

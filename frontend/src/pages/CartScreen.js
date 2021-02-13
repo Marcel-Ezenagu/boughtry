@@ -10,6 +10,9 @@ export default function CartScreen(props) {
 
     const dispatch = useDispatch();
     
+  const userSignin = useSelector(state => state.userSignin);
+  const { userInfo } = userSignin;
+    
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
 
@@ -24,7 +27,7 @@ export default function CartScreen(props) {
     };
 
     const checkoutHandler = () => {
-    props.history.push('/shipping')
+        props.history.push('/signin?redirect=shipping')
 }
 
     return (

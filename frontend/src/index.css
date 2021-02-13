@@ -1,4 +1,11 @@
+header {
+    position: relative;
+}
 
+footer{
+    position: absolute;
+    margin-bottom: 5px;
+}
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -28,10 +35,13 @@ body{
 }
 
 header {
-    position: relative;
+    
     top: 0;
     grid-area: header;
     background-color: #0e3d1c;
+    
+    position: sticky;
+    z-index: 1;
 }
 
 main {
@@ -43,7 +53,8 @@ footer {
     grid-area: footer;
     background-color: #46574b;
     color: white;
-    
+    bottom: 0;
+
     
 }
 

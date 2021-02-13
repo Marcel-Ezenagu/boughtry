@@ -16,6 +16,13 @@ userRouter.get('/seed', expressAsyncHandler(async (req, res) => {
 })
 );
 
+
+userRouter.get('/', expressAsyncHandler(async (req, res) => {
+    const users = await User.find({});
+    res.send(users)
+}))
+
+
 userRouter.post('/signin', expressAsyncHandler(async (req, res) => {
     const user = await User.findOne({ email: req.body.email });
     if (user) {

@@ -2,12 +2,14 @@ import bcrypt from 'bcryptjs';
 
 const data = {
     users: [{
+        id:1,
         name: "Marcel",
         email: "admin@example.com",
         password: bcrypt.hashSync('12345', 8),
         isAdmin: true,
     },
-    {
+        {
+        id:2,
         name: "Ukaa",
         email: "user@example.com",
         password: bcrypt.hashSync('12345', 8),
@@ -17,7 +19,7 @@ const data = {
 
     products: [
         {
-            
+            _id:'3',
             name:'Wild burger',
             category:'pastries',
             image: '/images/p1.jpg',
@@ -29,6 +31,7 @@ const data = {
         },
        
         {
+            _id:'4',
             name:'Fried Rice',
             category:'Rice',
             image: '/images/p2.jpg',
@@ -40,6 +43,7 @@ const data = {
             description: 'high quality product'
         },
         {
+            _id:'5',
             name:'Buttery smooth Ice-cream',
             category:'ice-cream',
             image: '/images/p3.jpg',
@@ -50,6 +54,7 @@ const data = {
             description: 'high quality product'
         },
         {
+            _id:'6',
             name:'Oven fresh Meat-Pie',
             category:'pastries',
             image: '/images/p4.jpg',
@@ -60,6 +65,7 @@ const data = {
             description: 'high quality product'
         },
         {
+            _id: '7',
             name:'Bottle Water',
             category:'drinks',
             image: '/images/p5.jpg',

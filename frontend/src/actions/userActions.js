@@ -1,6 +1,29 @@
 import axios from "axios";
-import { USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNOUT } from "../constants/userConstants"
+import {
+    USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS,
+    USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNOUT,
+    USER_LIST_REQUEST, USER_LIST_SUCCESS
+} from "../constants/userConstants"
 import instance from "../services/axios";
+
+export const listUsers = () => async (dispatch) => {
+    dispatch({
+        type: USER_LIST_REQUEST
+    });
+    try {
+        const { data } = await instance.get('/api/users');
+        dispatch({
+            type: USER_LIST_SUCCESS,
+            payload: data
+        })
+    } catch (error) {
+        dispatch({type: USER_LIST_FAIL,
+            payload:error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+        })
+    }
+}
 
 export const register = (name, email, password) => async (dispatch) => {
     dispatch({

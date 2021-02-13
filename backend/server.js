@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 
 import userRouter from "./routers/userRouter.js";
 import productRouter from "./routers/productRouter.js";
+import orderRouter from "./routers/orderRouter.js";
 
 
 dotenv.config();
@@ -29,10 +30,11 @@ app.get('/api/products/:id', (req, res) => {
 });
  */ 
 
-
+app.use('/api/orders', orderRouter)
 app.use('/api/users', userRouter);
 
 app.use('/api/products', productRouter);
+
 
 app.get('/', (req, res) => {
     res.send('Server is ready');
@@ -44,6 +46,7 @@ app.use((err, req, res, next) => {
 
 //db setup
    
+const port = process.env.PORT || 9002
 const URI = `mongodb://marcel:${process.env.DB_PASSWORD}@cluster0-shard-00-00.fkta9.mongodb.net:27017,cluster0-shard-00-01.fkta9.mongodb.net:27017,cluster0-shard-00-02.fkta9.mongodb.net:27017/${process.env.DB_NAME}?ssl=true&replicaSet=atlas-v9mvia-shard-0&authSource=admin&retryWrites=true&w=majority`
 mongoose.connect(URI, {
 
@@ -52,16 +55,15 @@ mongoose.connect(URI, {
     useUnifiedTopology: true
 })
 
-mongoose.connection.once('open', () => {
-    console.log('DB CONNECTED O!!')
-})
-
-
-
-// server setup
-
-const port = process.env.PORT || 9002
+ mongoose.connection.once('open', () => {
 
 app.listen(port, () => {
     console.log(`Serve at http://localhost:${port} `);
 });
+})
+ 
+
+
+// server setup
+
+

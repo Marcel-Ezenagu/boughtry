@@ -10,11 +10,6 @@ export default function Home() {
     const productList = useSelector(state => state.productList);
     const { loading, error, products } = productList;
  
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(listProducts());
-    }, []);
 
     return (
         <div>
